@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('register', function () {
     return redirect('login');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix'=>'employees'],function(){
+Route::get('/', [EmployeeController::class, 'index']);
+});

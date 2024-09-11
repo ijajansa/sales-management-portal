@@ -28,7 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-
+  @livewireStyles
 </head>
 
 <body>
@@ -38,6 +38,9 @@
     @include('layouts.header')
     @include('layouts.sidebar')
     @yield('content')
+    @isset($slot)
+            {{ $slot}}
+        @endisset
     @include('layouts.footer')
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -54,7 +57,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
-
+  @livewireScripts
 </body>
 
 </html>
