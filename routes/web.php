@@ -27,4 +27,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix'=>'employees'],function(){
 Route::get('/', [EmployeeController::class, 'index']);
+Route::get('create', [EmployeeController::class, 'create']);
+Route::post('create', [EmployeeController::class, 'store']);
 });
